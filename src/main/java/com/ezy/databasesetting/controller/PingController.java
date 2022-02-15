@@ -1,20 +1,20 @@
 package com.ezy.databasesetting.controller;
 
 import com.ezy.databasesetting.repository.DatabaseListRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.tvd12.ezyhttp.server.core.annotation.Controller;
+import com.tvd12.ezyhttp.server.core.annotation.DoGet;
+import lombok.AllArgsConstructor;
 
 
-@RestController
+@AllArgsConstructor
+@Controller("/api/v1")
 public class PingController {
 
-    @Autowired
-    private DatabaseListRepository databaseListRepository;
+    private final DatabaseListRepository databaseListRepository;
 
-    @GetMapping("/ping")
-    String ping() {
-        databaseListRepository.findAll();
+    @DoGet("/ping")
+    public String ping() {
+//        databaseListRepository.findAll();
         return "OK!";
     }
 }

@@ -1,13 +1,8 @@
 package com.ezy.databasesetting;
+import com.tvd12.ezyhttp.core.boot.EzyHttpApplicationBootstrap;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication
 public class DatabaseSettingApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(DatabaseSettingApplication.class, args);
+	public static void main(String[] args) throws Exception {
+		EzyHttpApplicationBootstrap.start(DatabaseSettingApplication.class);
 	}
-
 }
